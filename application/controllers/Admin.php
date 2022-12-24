@@ -17,7 +17,12 @@ class Admin extends CI_Controller
 		);
 
 		$save = json_decode($this->client->simple_post(APIVALIDATION, $data));
-		echo json_encode(array("data" => $save->status));
+		if (strcmp($save->type, "1") == 0) {
+			$this->session->set_userdata('token', $save->token);
+			// $this->load->view('dashboard');
+		} else {
+			$this->load->view('welcome_message');
+		}
 	}
 
 	public function index()
