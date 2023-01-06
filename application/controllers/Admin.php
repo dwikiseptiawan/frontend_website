@@ -11,6 +11,7 @@ class Admin extends CI_Controller
         $this->load->library('session');
     }
 
+	/* Login ----------------------------------------------------------------------------- */
 	public function login()
 	{
 		$this->load->view('login');
@@ -27,8 +28,9 @@ class Admin extends CI_Controller
 
 		if($save->check){
 			if (strcmp($save->type, "1") == 0) {
+				echo $save->token;
 				$this->session->set_userdata('token', $save->token);
-				$this->load->view('dashboard');
+				redirect("dashboard");
 			} else {
 				$save = json_decode($this->client->simple_get(APINUMBER));
 				redirect("https://wa.me/" . $save->number);
@@ -37,6 +39,24 @@ class Admin extends CI_Controller
 			$this->load->view('welcome_message');
 		}
 		
+	}
+
+	public function dashboard()
+	{
+		// $data['tampil'] = json_decode($this->client->simple_get(APIVALIDATION));
+
+		// foreach($data["tampil"]-> mahasiswa as $result) {
+		// 	# code...
+		// 	echo $result->npm_mhs."<br>";
+		// }
+
+		// echo $this->session->userdata('token') . "token";
+		// if (empty($this->session->userdata('token'))){
+		// 	// $this->load->view('welcome_message');
+		// 	// redirect("/");
+		// 	echo $this->session->userdata('token') . "\ntoken";
+		// } else 
+		$this->load->view('dashboard');
 	}
 
 	public function index()
