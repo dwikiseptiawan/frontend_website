@@ -3,6 +3,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Admin extends CI_Controller
 {
+	public function __construct()
+    {
+        parent::__construct();
+
+        // Load session library
+        $this->load->library('session');
+    }
 
 	public function login()
 	{
@@ -17,12 +24,19 @@ class Admin extends CI_Controller
 		);
 
 		$save = json_decode($this->client->simple_post(APIVALIDATION, $data));
-		if (strcmp($save->type, "1") == 0) {
-			$this->session->set_userdata('token', $save->token);
-			// $this->load->view('dashboard');
+
+		if($save->check){
+			if (strcmp($save->type, "1") == 0) {
+				$this->session->set_userdata('token', $save->token);
+				$this->load->view('dashboard');
+			} else {
+				$save = json_decode($this->client->simple_get(APINUMBER));
+				redirect("https://wa.me/" . $save->number);
+			}
 		} else {
 			$this->load->view('welcome_message');
 		}
+		
 	}
 
 	public function index()
