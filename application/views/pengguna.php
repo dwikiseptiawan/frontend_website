@@ -349,7 +349,7 @@
                     <td><?= $u->username ?></td>
                     <td><?= $u->created ?></td>
                     <td>
-                      <form action="delete_user" method="post">
+                      <form action="hapus_user" method="post">
                         <input type="hidden" name="id" value="<?= $u->id ?>">
                         <button type="submit" class="btn btn-danger">HAPUS</button>
                       </form>
