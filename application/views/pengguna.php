@@ -29,12 +29,6 @@
   <!-- Template Main CSS File -->
   <link href="<?= URL_DASHBOARD ?>assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin - v2.4.1
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -321,9 +315,40 @@
 
           <div class="card">
             <div class="card-body">
+              <h5 class="card-title">Input Pengguna</h5>
+
+              <form class="row g-3" action="tambah_user" method="post">
+                <div class="col-12">
+                  <label for="nama" class="form-label">Nama Lengkap</label>
+                  <input type="text" class="form-control" name="nama" id="nama">
+                </div>
+                <div class="col-12">
+                  <label for="username" class="form-label">Username</label>
+                  <input type="text" class="form-control" name="username" id="username">
+                  <!-- <input type="email" class="form-control" name="username"> -->
+                </div>
+                <div class="col-12">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" class="form-control" name="password" id="password">
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="reset" class="btn btn-secondary">Reset</button>
+                </div>
+              </form>             
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
               <h5 class="card-title">Table Pengguna</h5>
 
-              <table class="table">
+              <table class="table mt-3">
 
                 <thead>
                   <tr>
@@ -355,7 +380,6 @@
                       </form>
                     </td>
                   </tr>
-
                   <?php } ?>
                 </tbody>
               </table>              
