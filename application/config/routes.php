@@ -55,3 +55,4 @@ $route['translate_uri_dashes'] = TRUE;
 
 $route['login'] = 'Admin/login';
 $route['validasi'] = 'Admin/validation';
+$route['dashboard'] = 'Admin/dashboard';
