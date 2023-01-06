@@ -62,5 +62,5 @@ $route['dashboard'] = 'Admin/dashboard';
 /* Tampilan User */
 $route['pengguna'] = 'Admin/menu_user';
 $route['hapus_user'] = 'User/delete';
-$route['tambah_user'] = 'Admin/menu_user';
+$route['tambah_user'] = 'User/tambah';
 
