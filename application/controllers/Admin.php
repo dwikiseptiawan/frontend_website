@@ -59,6 +59,11 @@ class Admin extends CI_Controller
 		$this->load->view('dashboard');
 	}
 
+	public function menu_user()
+	{
+		$this->load->view('pengguna');
+	}
+
 	public function index()
 	{
 		$data['tampil'] = json_decode($this->client->simple_get(APIVALIDATION));
