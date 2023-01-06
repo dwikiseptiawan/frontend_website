@@ -55,5 +55,12 @@ $route['translate_uri_dashes'] = TRUE;
 
 $route['login'] = 'Admin/login';
 $route['validasi'] = 'Admin/validation';
+
+/* Tampilan Dashboard */
 $route['dashboard'] = 'Admin/dashboard';
+
+/* Tampilan User */
 $route['pengguna'] = 'Admin/menu_user';
+$route['hapus_user'] = 'User/delete';
+$route['tambah_user'] = 'Admin/menu_user';
+
