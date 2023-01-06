@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Tables / General - NiceAdmin Bootstrap Template</title>
+  <title>Pengguna</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -348,7 +348,12 @@
                     <td><?= $u->nama ?></td>
                     <td><?= $u->username ?></td>
                     <td><?= $u->created ?></td>
-                    <td></td>
+                    <td>
+                      <form action="delete_user" method="post">
+                        <input type="hidden" name="id" value="<?= $u->id ?>">
+                        <button type="submit" class="btn btn-danger">HAPUS</button>
+                      </form>
+                    </td>
                   </tr>
 
                   <?php } ?>
