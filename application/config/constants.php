@@ -88,7 +88,7 @@ defined('EXIT__AUTO_MAX')      or define('EXIT__AUTO_MAX', 125); // highest auto
 define("API", "http://localhost/backend_website");
 define("APIIMAGE", API . "/index.php/Mahasiswa");
 define("APINUMBER", API . "/index.php/Mahasiswa");
-define("APIUSER", API . "/index.php/Mahasiswa");
+define("APIUSER", API . "/index.php/User");
 define("APIVALIDATION", API . "/index.php/Validation");
 define("URL_DASHBOARD", "http://localhost/frontend_website/ext/tampilan_admin/");
 define("URL_UTAMA", "http://localhost/frontend_website/ext/tampilan_utama/");
