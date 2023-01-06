@@ -61,7 +61,8 @@ class Admin extends CI_Controller
 
 	public function menu_user()
 	{
-		$this->load->view('pengguna');
+		$data['user'] = json_decode($this->client->simple_get(APIUSER));
+		$this->load->view('pengguna', $data);
 	}
 
 	public function index()
