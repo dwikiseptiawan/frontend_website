@@ -28,9 +28,9 @@ td
 th, td
 {
     height: 40px;
-    border: var(--set_border);
-    
+    border: var(--set_border);   
 }
+
 .text-center{
     text-align: center;
 }
