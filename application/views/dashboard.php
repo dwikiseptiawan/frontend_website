@@ -287,13 +287,13 @@
       </li><!-- End Components Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
+        <a class="nav-link collapsed" href="gambar">
           <i class="bi bi-journal-text"></i><span>Gambar</span>
         </a>
       </li><!-- End Forms Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
+        <a class="nav-link collapsed" href="logout">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Logout</span>
         </a>
