@@ -281,19 +281,19 @@
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link" href="pengguna">
+        <a class="nav-link collapsed" href="pengguna">
           <i class="bi bi-menu-button-wide"></i><span>User</span>
         </a>
       </li><!-- End Components Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
+        <a class="nav-link" href="gambar">
           <i class="bi bi-journal-text"></i><span>Gambar</span>
         </a>
       </li><!-- End Forms Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
+        <a class="nav-link collapsed" href="logout">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Logout</span>
         </a>
