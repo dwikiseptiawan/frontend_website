@@ -54,6 +54,7 @@ $route['404_override'] = 'E404';
 $route['translate_uri_dashes'] = TRUE;
 
 $route['login'] = 'Admin/login';
+$route['logout'] = 'Admin/logout';
 $route['validasi'] = 'Admin/validation';
 
 /* Tampilan Dashboard */
@@ -63,4 +64,9 @@ $route['dashboard'] = 'Admin/dashboard';
 $route['pengguna'] = 'Admin/menu_user';
 $route['hapus_user'] = 'User/delete';
 $route['tambah_user'] = 'User/tambah';
+
+/* Tampilan User */
+$route['gambar'] = 'Gambar/menu_gambar';
+// $route['hapus_user'] = 'User/delete';
+// $route['tambah_user'] = 'User/tambah';
 
