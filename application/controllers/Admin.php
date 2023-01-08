@@ -28,9 +28,12 @@ class Admin extends CI_Controller
 
 		if($save->check){
 			if (strcmp($save->type, "1") == 0) {
-				echo $save->token;
-				$this->session->set_userdata('token', $save->token);
-				redirect("dashboard");
+				$this->session->set_tempdata('token', $save->token, 72000);
+				if (strcmp($this->session->tempdata('token'), "") == 0){
+					redirect("welcome_message");
+				} else redirect("dashboard");
+				// $this->session->set_userdata('token', $save->token);
+				// echo "\n" . $this->session->userdata('token') . "token";
 			} else {
 				$save = json_decode($this->client->simple_get(APINUMBER));
 				redirect("https://wa.me/" . $save->number);
@@ -51,8 +54,9 @@ class Admin extends CI_Controller
 		// }
 
 		// echo $this->session->userdata('token') . "token";
-		// if (empty($this->session->userdata('token'))){
-		// 	// $this->load->view('welcome_message');
+		// echo $this->session->tempdata('token') . "token";
+		// if (strcmp($this->session->tempdata('token'), "") == 0){
+			// $this->load->view('welcome_message');
 		// 	// redirect("/");
 		// 	echo $this->session->userdata('token') . "\ntoken";
 		// } else 
@@ -63,6 +67,12 @@ class Admin extends CI_Controller
 	{
 		$data['user'] = json_decode($this->client->simple_get(APIUSER));
 		$this->load->view('pengguna', $data);
+		
+	}
+
+	public function logout()
+	{
+		redirect('login');
 	}
 
 	public function index()
