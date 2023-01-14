@@ -44,7 +44,10 @@ class Admin extends CI_Controller
 	{
 		if (!empty($this->session->tempdata('token'))) {
 			$save = json_decode($this->client->simple_get(APINUMBER));
+			$user = json_decode($this->client->simple_get(APIUSER));
 			$data['phone'] = $save->number;
+			$data['userAll'] = $user->user_all;
+			$data['userToday'] = $user->user_today;
 			$this->load->view('dashboard', $data);
 		}
 		else redirect("/");
