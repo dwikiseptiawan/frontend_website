@@ -90,5 +90,6 @@ define("APIIMAGE", API . "/index.php/Mahasiswa");
 define("APINUMBER", API . "/index.php/Number");
 define("APIUSER", API . "/index.php/User");
 define("APIVALIDATION", API . "/index.php/Validation");
+
 define("URL_DASHBOARD", "http://localhost/frontend_website/ext/tampilan_admin/");
 define("URL_UTAMA", "http://localhost/frontend_website/ext/tampilan_utama/");
