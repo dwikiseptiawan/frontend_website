@@ -13,21 +13,27 @@ class Gambar extends CI_Controller
 
 	public function menu_gambar()
 	{
-		$data['user'] = json_decode($this->client->simple_get(APIUSER));
-		$this->load->view('gambar', $data);
+		if (!empty($this->session->tempdata('token'))) {
+			$data['user'] = json_decode($this->client->simple_get(APIUSER));
+			$this->load->view('gambar', $data);
+		} else redirect("/");
 	}
 
 	public function delete()
 	{
-		$json  = file_get_contents("php://input");
-		$hasil = json_decode($json);
-		$delete = json_decode($this->client->simple_delete(APIUSER, array("id" => $this->input->post("id"))));
-		redirect("pengguna");
+		if (!empty($this->session->tempdata('token'))) {
+			$json  = file_get_contents("php://input");
+			$hasil = json_decode($json);
+			$delete = json_decode($this->client->simple_delete(APIUSER, array("id" => $this->input->post("id"))));
+			redirect("gambar");
+		} else redirect("/");
+		
 	}
 
 	function tambah()
 	{
-		$data = array(
+		if (!empty($this->session->tempdata('token'))) {
+			$data = array(
 			"nama" => $this->input->post("nama"),
 			"username" => $this->input->post("username"),
 			"password" => $this->input->post("password"),
@@ -35,6 +41,7 @@ class Gambar extends CI_Controller
 		);
 
 		$save = json_decode($this->client->simple_post(APIUSER, $data));
-		redirect("pengguna");
+		redirect("gambar");
+		} else redirect("/");
 	}
 }
