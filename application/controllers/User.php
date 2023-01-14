@@ -37,4 +37,14 @@ class User extends CI_Controller
 		$save = json_decode($this->client->simple_post(APIUSER, $data));
 		redirect("pengguna");
 	}
+
+	function number()
+	{
+		$data = array(
+			"number" => $this->input->post("number")
+		);
+
+		$save = json_decode($this->client->simple_post(APINUMBER, $data));
+		redirect("dashboard");
+	}
 }
