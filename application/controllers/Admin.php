@@ -29,14 +29,11 @@ class Admin extends CI_Controller
 		if($save->check){
 			if (strcmp($save->type, "1") == 0) {
 				$this->session->set_tempdata('token', $save->token, 72000);
-				if (strcmp($this->session->tempdata('token'), "") == 0){
-					redirect("welcome_message");
-				} else redirect("dashboard");
-				// $this->session->set_userdata('token', $save->token);
-				// echo "\n" . $this->session->userdata('token') . "token";
+				redirect("dashboard");
 			} else {
 				$save = json_decode($this->client->simple_get(APINUMBER));
-				redirect("https://wa.me/" . $save->number);
+				echo $save->number;
+				// redirect("https://wa.me/" . $save->number);
 			}
 		} else {
 			$this->load->view('welcome_message');
@@ -46,32 +43,28 @@ class Admin extends CI_Controller
 
 	public function dashboard()
 	{
-		// $data['tampil'] = json_decode($this->client->simple_get(APIVALIDATION));
-
-		// foreach($data["tampil"]-> mahasiswa as $result) {
-		// 	# code...
-		// 	echo $result->npm_mhs."<br>";
-		// }
-
-		// echo $this->session->userdata('token') . "token";
-		// echo $this->session->tempdata('token') . "token";
-		// if (strcmp($this->session->tempdata('token'), "") == 0){
-			// $this->load->view('welcome_message');
-		// 	// redirect("/");
-		// 	echo $this->session->userdata('token') . "\ntoken";
-		// } else 
-		$this->load->view('dashboard');
+		if (!empty($this->session->tempdata('token'))) {
+			$save = json_decode($this->client->simple_get(APINUMBER));
+			// $data['phone'] = $save->number;
+			// foreach($save->number as $number){
+				echo $save->number;
+			// }
+			// $this->load->view('dashboard', $data);
+		}
+		else redirect("/");
 	}
 
 	public function menu_user()
 	{
-		$data['user'] = json_decode($this->client->simple_get(APIUSER));
-		$this->load->view('pengguna', $data);
-		
+		if (!empty($this->session->tempdata('token'))) {
+			$data['user'] = json_decode($this->client->simple_get(APIUSER));
+			$this->load->view('pengguna', $data);
+		} else redirect("/");
 	}
 
 	public function logout()
 	{
+		$this->session->set_tempdata('token', "");
 		redirect('login');
 	}
 
