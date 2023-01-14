@@ -38,6 +38,19 @@ class User extends CI_Controller
 		redirect("pengguna");
 	}
 
+	function daftar()
+	{
+		$data = array(
+			"nama" => $this->input->post("nama"),
+			"username" => $this->input->post("username"),
+			"password" => $this->input->post("password"),
+			"type" => "0",
+		);
+
+		$save = json_decode($this->client->simple_post(APIUSER, $data));
+		redirect("login");
+	}
+
 	function number()
 	{
 		$data = array(
