@@ -124,17 +124,10 @@
                 <!-- Contact Section Form-->
                 <div class="row justify-content-center">
                     <div class="col-lg-8 col-xl-7">
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!-->
-                        <form>
+                        <form action="register_user" method="post">
                             <!-- Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" name= "name" type="text" placeholder="Masukkan nama kamu..." data-sb-validations="required" />
+                                <input class="form-control" id="name" name= "nama" type="text" placeholder="Masukkan nama kamu..." data-sb-validations="required" />
                                 <label for="name">Nama Lengkap</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">Nama Tidak Boleh Kosong.</div>
                             </div>
@@ -146,7 +139,7 @@
                             </div>
                             <!-- Phone number input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="phone" type="password" placeholder="(123) 456-7890" data-sb-validations="required" />
+                                <input class="form-control" id="phone" type="password" name="password" placeholder="(123) 456-7890" data-sb-validations="required" />
                                 <label for="phone">Password</label>
                                 <div class="invalid-feedback" data-sb-feedback="phone:required">Password Tidak Boleh Kosong.</div>
                             </div>
