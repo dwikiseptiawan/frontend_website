@@ -32,8 +32,7 @@ class Admin extends CI_Controller
 				redirect("dashboard");
 			} else {
 				$save = json_decode($this->client->simple_get(APINUMBER));
-				echo $save->number;
-				// redirect("https://wa.me/" . $save->number);
+				redirect("https://wa.me/" . $save->number);
 			}
 		} else {
 			$this->load->view('welcome_message');
@@ -45,11 +44,8 @@ class Admin extends CI_Controller
 	{
 		if (!empty($this->session->tempdata('token'))) {
 			$save = json_decode($this->client->simple_get(APINUMBER));
-			// $data['phone'] = $save->number;
-			// foreach($save->number as $number){
-				echo $save->number;
-			// }
-			// $this->load->view('dashboard', $data);
+			$data['phone'] = $save->number;
+			$this->load->view('dashboard', $data);
 		}
 		else redirect("/");
 	}
