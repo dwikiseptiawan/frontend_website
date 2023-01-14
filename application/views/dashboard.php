@@ -372,7 +372,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Update Phone Number Whatsapp</span></h5>
                   <div class="d-flex align-items-center">
-                    <form class="row g-3" action="tambah_user" method="post">
+                    <form class="row g-3 col-xl-12" action="tambah_user" method="post">
                       <div class="col-12">
                         <label for="number" class="form-label">Whatsapp</label>
                         <input type="number" class="form-control" name="number" id="number" value="<?= $phone ?>">
