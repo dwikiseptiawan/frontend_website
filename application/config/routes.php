@@ -65,8 +65,8 @@ $route['pengguna'] = 'Admin/menu_user';
 $route['hapus_user'] = 'User/delete';
 $route['tambah_user'] = 'User/tambah';
 
-/* Tampilan User */
+/* Tampilan Gambar Fortofolio */
 $route['gambar'] = 'Gambar/menu_gambar';
 $route['update_whatsapp'] = 'User/number';
-// $route['tambah_user'] = 'User/tambah';
+$route['register_user'] = 'User/daftar';
 
