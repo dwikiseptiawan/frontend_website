@@ -9,15 +9,12 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <!-- Favicons -->
   <link href="<?= URL_DASHBOARD ?>assets/img/favicon.png" rel="icon">
   <link href="<?= URL_DASHBOARD ?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
   <link href="<?= URL_DASHBOARD ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="<?= URL_DASHBOARD ?>assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="<?= URL_DASHBOARD ?>assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
@@ -26,7 +23,6 @@
   <link href="<?= URL_DASHBOARD ?>assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="<?= URL_DASHBOARD ?>assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
   <link href="<?= URL_DASHBOARD ?>assets/css/style.css" rel="stylesheet">
 
 </head>
@@ -83,13 +79,6 @@
         </a>
       </li><!-- End Components Nav -->
 
-      <!-- <li class="nav-item">
-        <a class="nav-link collapsed" href="gambar">
-          <i class="bi bi-journal-text"></i><span>Gambar</span>
-        </a>
-      </li> -->
-      <!-- End Forms Nav -->
-
       <li class="nav-item">
         <a class="nav-link collapsed" href="logout">
           <i class="bi bi-box-arrow-in-right"></i>
@@ -129,7 +118,6 @@
                 <div class="col-12">
                   <label for="username" class="form-label">Username</label>
                   <input type="text" class="form-control" name="username" id="username">
-                  <!-- <input type="email" class="form-control" name="username"> -->
                 </div>
                 <div class="col-12">
                   <label for="password" class="form-label">Password</label>
@@ -195,7 +183,6 @@
 
   </main><!-- End #main -->
 
-  <!-- Vendor JS Files -->
   <script src="<?= URL_DASHBOARD ?>assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="<?= URL_DASHBOARD ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="<?= URL_DASHBOARD ?>assets/vendor/chart.js/chart.min.js"></script>
@@ -204,8 +191,6 @@
   <script src="<?= URL_DASHBOARD ?>assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="<?= URL_DASHBOARD ?>assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="<?= URL_DASHBOARD ?>assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
   <script src="<?= URL_DASHBOARD ?>assets/js/main.js"></script>
 
 </body>
